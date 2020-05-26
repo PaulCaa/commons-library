@@ -1,7 +1,7 @@
 package ar.com.pablocaamano.commons.rest;
 
+import ar.com.pablocaamano.commons.util.IdGenerator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
 
 /**
@@ -15,7 +15,12 @@ public class Header {
     @JsonProperty(value = "uri_path")
     private String uriPath = null;
     private String timestamp = null;
+    private String trace = null;
     private List<Error> errors = null;
+
+    public Header(){
+        this.trace = IdGenerator.getStringIdRadom();
+    }
 
     public String getCode() {
         return code;
@@ -47,6 +52,14 @@ public class Header {
 
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public String getTrace() {
+        return trace;
+    }
+
+    public void setTrace(String trace) {
+        this.trace = trace;
     }
 
     public List<Error> getErrors() {

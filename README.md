@@ -1,6 +1,6 @@
 # Commons Library
 
-Library provider of commons classes for rest api projects
+Library provider of commons classes for rest api projects, for example: request and response object and exception models.
 
 
 ### Install 
@@ -19,7 +19,7 @@ To use the artifacts of this project include the following dependency in `pom.xm
 ```xml
     <dependency>
         <groupId>ar.com.pablocaamano</groupId>
-        <artifactId>lib-commons</artifactId>
-        <version>0.1-SNAPSHOT</version>
+        <artifactId>commons-library</artifactId>
+        <version>1.0</version>
     </dependecy>
 ```
