@@ -46,6 +46,11 @@ public class ResponseBuilder {
         return this;
     }
 
+    public ResponseBuilder addTraceRequest(String trace) {
+        this.header.setTrace(trace);
+        return this;
+    }
+
     public ResponseBuilder addData(Object object){
         this.data.add(object);
         return this;
