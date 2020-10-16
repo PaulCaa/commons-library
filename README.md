@@ -20,6 +20,6 @@ To use the artifacts of this project include the following dependency in `pom.xm
     <dependency>
         <groupId>ar.com.pablocaamano</groupId>
         <artifactId>commons-library</artifactId>
-        <version>1.0</version>
+        <version>1.2</version>
     </dependecy>
 ```

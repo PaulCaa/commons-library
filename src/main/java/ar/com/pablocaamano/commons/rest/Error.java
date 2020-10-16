@@ -10,6 +10,56 @@ public class Error {
     private String description = null;
     private Throwable cause = null;
 
+    public Error(){}
+
+    /**
+     * Generate error with message
+     * @param message
+     */
+    public Error(String message){
+        this.message = message;
+    }
+
+    /**
+     * Generate error with cause
+     * @param cause Throwable or Exception
+     */
+    public Error(Throwable cause){
+        this.cause = cause;
+    }
+
+    /**
+     * Generate error with message and description
+     * @param message error message
+     * @param description error description
+     */
+    public Error(String message, String description){
+        this.message = message;
+        this.description = description;
+    }
+
+    /**
+     * Generate error with message and cause
+     * @param message error message
+     * @param cause Throwable or Exception
+     */
+    public Error(String message, Throwable cause){
+        this.message = message;
+        this.cause = cause;
+    }
+
+    /**
+     * Generate error with message, description and cause
+     * @param message error message
+     * @param description error description
+     * @param cause Throwable or Exception
+     */
+    public Error(String message, String description, Throwable cause){
+        this.message = message;
+        this.description = description;
+        this.cause = cause;
+    }
+
     public String getMessage() {
         return message;
     }
