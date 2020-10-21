@@ -8,17 +8,26 @@ public class CommonHttpException extends CommonException implements ICommonHttpE
     private HttpStatus httpStatus;
     private String code;
 
-    public CommonHttpException(String message, HttpStatus status) {
+    public CommonHttpException(String message, HttpStatus httpStatus) {
         super(message);
+        this.httpStatus = httpStatus;
     }
 
-    public CommonHttpException(String message, HttpStatus status, Throwable cause) {
+    public CommonHttpException(String message, HttpStatus httpStatus, Throwable cause) {
         super(message, cause);
+        this.httpStatus = httpStatus;
     }
 
-    public CommonHttpException(String message, HttpStatus status, Throwable cause, String code) {
+    public CommonHttpException(String message, HttpStatus httpStatus, String code) {
+        super(message);
+        this.code = code;
+        this.httpStatus = httpStatus;
+    }
+
+    public CommonHttpException(String message, HttpStatus httpStatus, Throwable cause, String code) {
         super(message, cause);
         this.code = code;
+        this.httpStatus = httpStatus;
     }
 
     @Override
