@@ -1,5 +1,7 @@
 package ar.com.pablocaamano.commons.rest;
 
+import lombok.Data;
+
 import java.util.List;
 
 /**
@@ -7,23 +9,11 @@ import java.util.List;
  * @author Pablo Caamaño
  * @since 20/11/2019
  */
+@Data
 public class RestResponse {
+
     private Header header = null;
+
     private List<Object> data = null;
 
-    public Header getHeader() {
-        return header;
-    }
-
-    public void setHeader(Header header) {
-        this.header = header;
-    }
-
-    public List<Object> getData() {
-        return data;
-    }
-
-    public void setData(List<Object> data) {
-        this.data = data;
-    }
 }
