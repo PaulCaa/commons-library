@@ -1,7 +1,5 @@
 package ar.com.pablocaamano.commons.exception;
 
-import java.io.Serial;
-
 /**
  * Base exception model to generate custom exceptions
  * @author Pablo Caamaño
@@ -9,7 +7,6 @@ import java.io.Serial;
  */
 public class CommonException extends RuntimeException {
 
-    @Serial
     private static final long serialVersionUID = 5142379291361803058L;
 
     /**
