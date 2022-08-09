@@ -2,6 +2,10 @@ package ar.com.pablocaamano.commons.rest;
 
 import ar.com.pablocaamano.commons.util.IdGenerator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+
+import java.time.LocalDateTime;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -9,64 +13,53 @@ import java.util.List;
  * @author Pablo Caamaño
  * @since 20/11/2019
  */
+@Getter
 public class Header {
-    private String code = null;
-    private String method = null;
+    private String code;
+    private String method;
     @JsonProperty(value = "uri_path")
-    private String uriPath = null;
-    private String timestamp = null;
-    private String trace = null;
-    private List<Error> errors = null;
+    private String uriPath;
+    private final String timestamp;
+
+    @JsonProperty(value = "trace_id")
+    private final String traceId;
+    private List<Error> errors;
 
     public Header(){
-        this.trace = IdGenerator.getStringIdRadom();
+        this.traceId = IdGenerator.getStringIdRadom();
+        this.timestamp = LocalDateTime.now().toString();
+        this.errors = new LinkedList<>();
+
     }
 
-    public String getCode() {
-        return code;
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for(Error e : errors) sb.append(e.toString());
+        return "{\"code\": \""+code+"\", " +
+                "\"method\": \""+method+"\", " +
+                "\"uriPath\": \""+uriPath+"\", " +
+                "\"timestamp\": \""+timestamp+"\", " +
+                "\"traceId\": \""+traceId+"\", " +
+                "\"errors\": ["+sb.toString()+"]}";
     }
 
     public void setCode(String code) {
         this.code = code;
     }
 
-    public String getMethod() {
-        return method;
-    }
-
     public void setMethod(String method) {
         this.method = method;
-    }
-
-    public String getUriPath() {
-        return uriPath;
     }
 
     public void setUriPath(String uriPath) {
         this.uriPath = uriPath;
     }
 
-    public String getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    public String getTrace() {
-        return trace;
-    }
-
-    public void setTrace(String trace) {
-        this.trace = trace;
-    }
-
-    public List<Error> getErrors() {
-        return errors;
-    }
-
     public void setErrors(List<Error> errors) {
         this.errors = errors;
+    }
+
+    public void setError(Error error) {
+        this.errors.add(error);
     }
 }

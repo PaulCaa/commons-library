@@ -1,11 +1,16 @@
 package ar.com.pablocaamano.commons.exception;
 
+import java.io.Serial;
+
 /**
  * Base exception model to generate custom exceptions
  * @author Pablo Caamaño
  * @since 20/11/2019
  */
 public class CommonException extends RuntimeException {
+
+    @Serial
+    private static final long serialVersionUID = 5142379291361803058L;
 
     /**
      * @param message error message description
@@ -14,12 +19,6 @@ public class CommonException extends RuntimeException {
         super(message);
     }
 
-    /**
-     * @param cause exception causing of error
-     */
-    public CommonException(Throwable cause){
-        super(cause);
-    }
 
     /**
      * @param message error message description
@@ -29,11 +28,4 @@ public class CommonException extends RuntimeException {
         super(message, cause);
     }
 
-    /**
-     * @param cause exception causing of error
-     * @param message error message description
-     */
-    public CommonException(Throwable cause, String message){
-        super(message, cause);
-    }
 }
