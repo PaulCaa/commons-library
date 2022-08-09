@@ -2,8 +2,15 @@
 
 Library provider of commons classes for rest api projects, for example: request and response object and exception models.
 
+## Changelog
 
-### Install 
+#### Version 1.4.0
+    - Upgrade Spring dependencies to 5.3.22
+    - Lombok implemented
+
+
+
+### Install
 
 To install in local repository use this command:
 
@@ -18,8 +25,8 @@ To use the artifacts of this project include the following dependency in `pom.xm
 
 ```xml
     <dependency>
-        <groupId>ar.com.pablocaamano</groupId>
-        <artifactId>commons-library</artifactId>
-        <version>1.2</version>
-    </dependecy>
+    <groupId>ar.com.pablocaamano</groupId>
+    <artifactId>commons-library</artifactId>
+    <version>1.4.0</version>
+</dependecy>
 ```
