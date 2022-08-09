@@ -12,9 +12,9 @@ import java.util.List;
  * @since 20/11/2019
  */
 public class ResponseBuilder {
-    private Header header = null;
-    private List<Object> data = null;
-    private List<Error> errors = null;
+    private final Header header;
+    private final List<Object> data;
+    private final List<Error> errors;
 
     public ResponseBuilder(){
         this.header = new Header();
@@ -41,10 +41,6 @@ public class ResponseBuilder {
         return this;
     }
 
-    public ResponseBuilder addTimestamp(String timestamp){
-        this.header.setTimestamp(timestamp);
-        return this;
-    }
 
     public ResponseBuilder addData(Object object){
         this.data.add(object);

@@ -7,6 +7,8 @@ package ar.com.pablocaamano.commons.exception;
  */
 public class CommonException extends RuntimeException {
 
+    private static final long serialVersionUID = 5142379291361803058L;
+
     /**
      * @param message error message description
      */
@@ -14,12 +16,6 @@ public class CommonException extends RuntimeException {
         super(message);
     }
 
-    /**
-     * @param cause exception causing of error
-     */
-    public CommonException(Throwable cause){
-        super(cause);
-    }
 
     /**
      * @param message error message description
@@ -29,11 +25,4 @@ public class CommonException extends RuntimeException {
         super(message, cause);
     }
 
-    /**
-     * @param cause exception causing of error
-     * @param message error message description
-     */
-    public CommonException(Throwable cause, String message){
-        super(message, cause);
-    }
 }

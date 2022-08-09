@@ -10,6 +10,8 @@ import java.util.Date;
  */
 public class TimeGenerator {
 
+    private TimeGenerator() { }
+
     /**
      * Get now time in String type with format: YYYY-MM-DD HH:MM:SS
      * @return String
