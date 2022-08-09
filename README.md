@@ -24,7 +24,7 @@ To install in local repository use this command:
 To use the artifacts of this project include the following dependency in `pom.xml`.
 
 ```xml
-    <dependency>
+<dependency>
     <groupId>ar.com.pablocaamano</groupId>
     <artifactId>commons-library</artifactId>
     <version>1.4.0</version>
