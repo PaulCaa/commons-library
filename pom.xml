@@ -5,7 +5,7 @@
 
   <groupId>ar.com.pablocaamano</groupId>
   <artifactId>commons-library</artifactId>
-  <version>1.4.1-SNAPSHOT</version>
+  <version>1.4.1</version>
 
   <name>lib-commons</name>
   <description>Library provider commons tools and classes for rest projects</description>
