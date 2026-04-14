@@ -11,20 +11,20 @@ import java.time.LocalDateTime;
  * @author Pablo Caamaño
  * @since 15/10/2020
  */
-public class TimeGenerator {
-    public static TimeGenerator instance = null;
+public class DateTimeGenerator {
+    public static DateTimeGenerator instance = null;
 
     private final String dateFormat;
     private final String dateTimeFormat;
 
-    private TimeGenerator() {
+    private DateTimeGenerator() {
         this.dateFormat = "yyyy-MM-dd";
         this.dateTimeFormat = "yyyy-MM-dd HH:mm:ss";
     }
 
-    public static TimeGenerator init() {
+    public static DateTimeGenerator init() {
         if(instance == null) {
-            instance = new TimeGenerator();
+            instance = new DateTimeGenerator();
         }
         return instance;
     }
