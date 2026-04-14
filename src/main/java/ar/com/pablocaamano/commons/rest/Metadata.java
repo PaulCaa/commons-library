@@ -6,7 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * Basic model of Error to add in rest responses of microservices
+ * Basic header model of rest responses with request information
  * @author Pablo Caamaño
  * @since 20/11/2019
  */
@@ -14,7 +14,8 @@ import lombok.ToString;
 @Setter
 @ToString
 @Builder
-public class Error {
-    private String message;
-    private String description;
+public class Metadata {
+    private String code;
+    private String method;
+    private String timestamp;
 }

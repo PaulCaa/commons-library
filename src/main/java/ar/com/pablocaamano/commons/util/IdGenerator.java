@@ -1,7 +1,6 @@
 package ar.com.pablocaamano.commons.util;
 
-import ar.com.pablocaamano.commons.exception.EmptyParameterException;
-import ar.com.pablocaamano.commons.exception.ProcessFailedException;
+import ar.com.pablocaamano.commons.exception.InternalErrorException;
 
 import java.nio.charset.StandardCharsets;
 import java.util.UUID;
@@ -16,7 +15,7 @@ public class IdGenerator {
             UUID uuid = UUID.nameUUIDFromBytes(byteStructure);
             return uuid.toString();
         }catch(Exception exception){
-            throw new ProcessFailedException("Error generating ID", exception);
+            throw new InternalErrorException("Error generating ID", exception);
         }
     }
 
@@ -27,28 +26,13 @@ public class IdGenerator {
 
 
     /**
-     * Generate UUID based on application information. Company, AppName and Version cannot be null together
-     * @param company company, organization or developer of the application
-     * @param name application name
-     * @param version application version
-     * @return String id
-     */
-    public static String getStringIdWith(String company, String name, String version){
-        if((company == null || company.equalsIgnoreCase("")) && (name == null || name.equalsIgnoreCase(""))
-                && (version == null || version.equalsIgnoreCase(""))) {
-            throw new EmptyParameterException();
-        }
-        return generate(company + name + version);
-    }
-
-    /**
      * Generate random UUID
      * @return String id
      */
     public static String getStringIdRadom(){
         String id = generate();
         if (id == null || id.equalsIgnoreCase(""))
-            throw new ProcessFailedException("Error generating ID");
+            throw new InternalErrorException("Error generating ID");
         return id;
     }
 }
