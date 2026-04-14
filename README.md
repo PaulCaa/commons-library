@@ -4,6 +4,12 @@ Library provider of commons classes for rest api projects, for example: request 
 
 ## Changelog
 
+#### Version 1.5.0
+    - Unnecesary builder implementation removed
+    - Models simplified
+    - Exceptions refactored and new cases availables
+    - Error handler added
+
 #### Version 1.4.1
     - Error param in CommonException    
 
@@ -30,6 +36,6 @@ To use the artifacts of this project include the following dependency in `pom.xm
 <dependency>
     <groupId>ar.com.pablocaamano</groupId>
     <artifactId>commons-library</artifactId>
-    <version>1.4.1</version>
+    <version>1.5.0-SNAPSHOT</version>
 </dependecy>
 ```
